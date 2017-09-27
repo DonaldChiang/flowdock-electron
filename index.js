@@ -7,10 +7,6 @@ const fs = require('fs');
 
 const app = electron.app;
 
-require('electron-debug')();
-require('electron-dl')();
-require('electron-context-menu')();
-
 let mainWindow;
 
 function createWindow () {
@@ -20,6 +16,7 @@ function createWindow () {
         tabbingIdentifier: 'flowdock',
         webPreferences: {
             nodeIntegration: false,
+            preload: path.join(__dirname, 'browser.js'),
             plugins: true
         }
     })
@@ -48,14 +45,13 @@ app.on('ready', () => {
         page.insertCSS(fs.readFileSync(path.join(__dirname, './browser.css'), 'utf8'));
         mainWindow.show();
     });
-    page.openDevTools();
 
     page.on('new-window', (e, url) => {
         e.preventDefault();
         electron.shell.openExternal(url);
     });
 
-    mainWindow.webContents.session.on('will-download', (event, item) => {
+    page.on('will-download', (event, item) => {
         const totalBytes = item.getTotalBytes();
 
         item.on('updated', () => {

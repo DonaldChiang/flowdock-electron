@@ -1,31 +1,33 @@
 {
-  "name": "flowdock-electron-app",
-  "productName": "Flowdock Electron App",
-  "desktopName": "Flowdock Electron App",
-  "version": "0.0.2",
-  "main": "main.js",
+  "name": "flowdock-electron",
+  "productName": "Flowdock Electron",
+  "desktopName": "Flowdock Electron",
+  "version": "0.1.2",
   "description": "Unofficial CA Flowdock Electron App",
   "license": "MIT",
-  "repository": "https://github.com/DonaldChiang/flowdock-electron-app",
+  "repository": "https://github.com/DonaldChiang/flowdock-electron",
   "author": {
     "name": "Donald Chiang",
     "email": "dc@rydc.io"
   },
+  "files": [
+    "index.js",
+    "browser.js",
+    "browser.css",
+    "static/flowdock.icns"
+  ],
+  "keywords": [
+    "electron-app",
+    "flowdock"
+  ],
   "scripts": {
     "start": "electron .",
     "build": "npm run build:macos && npm run build:linux && npm run build:windows",
-    "build:macos": "electron-packager . --overwrite --out=dist --ignore='^media$' --prune --platform=darwin --arch=x64 --icon=static/flowdock.icns --app-bundle-id=com.donaldchiang.flowdock-electron-app --app-version=$npm_package_version",
-    "build:linux": "electron-packager . --overwrite --out=dist --ignore='^media$' --prune --platform=linux --arch=x64 --icon=static/flowdock.png --app-bundle-id=com.donaldchiang.flowdock-electron-app --app-version=$npm_package_version",
-    "build:windows": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --prune --platform=win32 --arch=ia32 --icon=static/flowdock.ico --version-string.ProductName=$npm_package_productName --app-version=$npm_package_version"
-  },
-  "dependencies": {
-    "electron-config": "^0.1.1",
-    "electron-context-menu": "^0.1.0",
-    "electron-debug": "^1.0.0",
-    "electron-dl": "^1.0.0"
+    "build:macos": "electron-packager . --overwrite --asar --out=dist --prune --platform=darwin --arch=x64 --icon=static/flowdock.icns --app-bundle-id=com.donaldchiang.flowdock-electron-app --app-version=$npm_package_version && zip -ryXq9 ./releases/flowdock-electron-osx-${npm_package_version}.zip dist/Flowdock\\ Electron-darwin-x64/Flowdock\\ Electron.app",
+    "build:linux": "electron-packager . --overwrite --out=dist --prune --platform=linux --arch=x64 --icon=static/flowdock.png --app-bundle-id=com.donaldchiang.flowdock-electron-app --app-version=$npm_package_version && zip -ryq9 ./releases/flowdock-electron-linux-${npm_package_version}.zip dist/Flowdock\\ Electron-linux-x64/*",
+    "build:windows": "electron-packager . --overwrite --asar --out=dist --prune --platform=win32 --arch=ia32 --icon=static/flowdock.ico --version-string.ProductName=$npm_package_productName --app-version=$npm_package_version && zip -ryq9 ./releases/flowdock-electron-windows-${npm_package_version}.zip dist/Flowdock\\ Electron-win32-ia32/*"
   },
   "devDependencies": {
-    "electron-config": "^0.1.1",
     "electron-context-menu": "^0.1.0",
     "electron-debug": "^1.0.0",
     "electron-dl": "^1.0.0",

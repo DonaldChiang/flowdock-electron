@@ -505,12 +505,6 @@ doctrine@^2.0.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-dot-prop@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-3.0.0.tgz#1b708af094a49c9a0e7dbcad790aba539dac1177"
-  dependencies:
-    is-obj "^1.0.0"
-
 dot-prop@^4.1.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
@@ -526,13 +520,6 @@ ecc-jsbn@~0.1.1:
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
   dependencies:
     jsbn "~0.1.0"
-
-electron-config@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/electron-config/-/electron-config-0.1.1.tgz#d5a1181b94839b4c99499e70eb2bfed2aea0aafc"
-  dependencies:
-    dot-prop "^3.0.0"
-    mkdirp "^0.5.1"
 
 electron-context-menu@^0.1.0:
   version "0.1.3"
