@@ -7,7 +7,7 @@ This Electron app use WebContent to load `https://www.flowdock.com/app` and add 
 
 # Known issues
 
-1. Stay logged in session will missing after quit application
+1. Stay logged in session will missing after application restart
 
 # Usage
 
