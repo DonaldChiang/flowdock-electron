@@ -14,11 +14,11 @@ This Electron app use WebContent to load `https://www.flowdock.com/app` and add 
 
 ## OS X
 
-[Download](https://github.com/DonaldChiang/flowdock-electron/releases/tag/0.1.2), unzip it, move Flowdock Electron.app to /Applications directory.
+[Download](https://github.com/DonaldChiang/flowdock-electron/releases/latest), unzip it, move Flowdock Electron.app to /Applications directory.
 
 ## Linux
 
-[Download](https://github.com/DonaldChiang/flowdock-electron/releases/tag/0.1.2), unzip it
+[Download](https://github.com/DonaldChiang/flowdock-electron/releases/latest), unzip it
 
 Create a file in `~/.local/share/applications` named `flowdock-electron`
 
@@ -33,7 +33,7 @@ Icon=/path/to/Flowdock Electron/resources/app/static/Icon.png
 
 ## Windows
 
-[Download](https://github.com/DonaldChiang/flowdock-electron/releases/tag/0.1.2), unzip it
+[Download](https://github.com/DonaldChiang/flowdock-electron/releases/latest), unzip it
 
 ## Thanks and reference
 
