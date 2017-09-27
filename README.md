@@ -11,4 +11,4 @@ This Electron app use WebContent to load `https://www.flowdock.com/app` and add 
 
 # Usage
 
-Just download the latest release and unarchive it.
+Just download the [latest release](https://github.com/DonaldChiang/flowdock-electron-app/releases/tag/0.0.1) and unarchive it.
