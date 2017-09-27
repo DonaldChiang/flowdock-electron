@@ -7,8 +7,38 @@ This Electron app use WebContent to load `https://www.flowdock.com/app` and add 
 
 # Known issues
 
-1. Stay logged in session will missing after application restart
+1. ~~Stay logged in session will missing after application restart~~
+2. Open link with `electron.shell.openExternal(url)` will trigger twice
 
-# Usage
+# Install
 
-Just download the [latest release](https://github.com/DonaldChiang/flowdock-electron-app/releases/tag/0.0.1) and unarchive it.
+## OS X
+
+[Download](https://github.com/DonaldChiang/flowdock-electron/releases/tag/0.1.2), unzip it, move Flowdock Electron.app to /Applications directory.
+
+## Linux
+
+[Download](https://github.com/DonaldChiang/flowdock-electron/releases/tag/0.1.2), unzip it
+
+Create a file in `~/.local/share/applications` named `flowdock-electron`
+
+```
+[Desktop Entry]
+Name=Flowdock Electron
+Exec=/path/to/Flowdock Electron
+Terminal=false
+Type=Application
+Icon=/path/to/Flowdock Electron/resources/app/static/Icon.png
+```
+
+## Windows
+
+[Download](https://github.com/DonaldChiang/flowdock-electron/releases/tag/0.1.2), unzip it
+
+## Thanks and reference
+
+I am very new to electron, some structs in this app was referred from [trello-desktop](https://github.com/danielchatfield/trello-desktop)
+
+[CA Flowdock](https://www.flowdock.com)
+
+[USERVOICE](https://flowdock.uservoice.com/forums/36827-general/suggestions/5631691-allow-pasting-images-from-the-clipboard)
