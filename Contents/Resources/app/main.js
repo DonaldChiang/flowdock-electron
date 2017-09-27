@@ -14,7 +14,7 @@ function createWindow () {
         }
     })
 
-    mainWindow.loadURL('https://www.flowdock.com/app/mynet')
+    mainWindow.loadURL('https://www.flowdock.com/app')
     mainWindow.on('closed', function () {
         mainWindow = null
     })
