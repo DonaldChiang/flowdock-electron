@@ -1,0 +1,13 @@
+{
+  "name": "Flowdock",
+  "version": "0.0.1",
+  "description": "Flowdock electron app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  }
+}
