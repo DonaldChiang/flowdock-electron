@@ -37,8 +37,6 @@ Icon=/path/to/Flowdock Electron/resources/app/static/Icon.png
 
 ## Thanks and reference
 
-I am very new to electron, some structs in this app was referred from [trello-desktop](https://github.com/danielchatfield/trello-desktop)
+I am a beginner of [Electron](https://github.com/electron/electron), some structs in this app was referred from [trello-desktop](https://github.com/danielchatfield/trello-desktop)
 
-[CA Flowdock](https://www.flowdock.com)
-
-[USERVOICE](https://flowdock.uservoice.com/forums/36827-general/suggestions/5631691-allow-pasting-images-from-the-clipboard)
+Thanks [CA Flowdock](https://www.flowdock.com) and [USERVOICE](https://flowdock.uservoice.com/forums/36827-general/suggestions/5631691-allow-pasting-images-from-the-clipboard)
