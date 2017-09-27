@@ -24,11 +24,11 @@ Create a file in `~/.local/share/applications` named `flowdock-electron.desktop`
 
 ```
 [Desktop Entry]
-Name=flowdock-electron
-Exec=/path/to/Flowdock Electron
+Name=Flowdock Electron
+Exec=/path/to/Flowdock\ Electron
 Terminal=false
 Type=Application
-Icon=/path/to/Flowdock Electron/resources/app/static/Icon.png
+Icon=/path/to/Flowdock\ Electron/resources/app/static/flowdock.png
 ```
 
 ## Windows
