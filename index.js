@@ -7,10 +7,14 @@ const fs = require('fs');
 
 const app = electron.app;
 
+require('electron-debug')();
+require('electron-dl')();
+require('electron-context-menu')();
+
 let mainWindow;
 
 function createWindow () {
-    const main_window = new electron.BrowserWindow({
+    let main_window = new electron.BrowserWindow({
         width: 1280,
         height: 800,
         tabbingIdentifier: 'flowdock',
@@ -28,7 +32,8 @@ function createWindow () {
 
     main_window.on('close', e => {
         if (process.platform === 'darwin') {
-            app.hide();
+            main_window.hide();
+            e.preventDefault();
         } else {
             app.quit();
         }
@@ -40,7 +45,7 @@ function createWindow () {
 app.on('ready', () => {
     mainWindow = createWindow();
     const page = mainWindow.webContents;
-
+    page.openDevTools()
     page.on('dom-ready', () => {
         page.insertCSS(fs.readFileSync(path.join(__dirname, './browser.css'), 'utf8'));
         mainWindow.show();
@@ -48,6 +53,9 @@ app.on('ready', () => {
 
     page.on('new-window', (e, url) => {
         e.preventDefault();
+        const new_window = new electron.BrowserWindow({show: false});
+        new_window.once('ready-to-show', () => new_window.close());
+        e.newGuest = new_window;
         electron.shell.openExternal(url);
     });
 
@@ -75,7 +83,7 @@ app.on('ready', () => {
                 {type: 'separator'},
                 {
                     label: 'Quit', accelerator: 'Command+Q', click: () => {
-                        app.quit();
+                        app.exit();
                     }
                 }
             ]

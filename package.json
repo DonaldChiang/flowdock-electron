@@ -2,7 +2,7 @@
   "name": "flowdock-electron",
   "productName": "Flowdock Electron",
   "desktopName": "Flowdock Electron",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Unofficial CA Flowdock Electron App",
   "license": "MIT",
   "repository": "https://github.com/DonaldChiang/flowdock-electron",
@@ -20,17 +20,22 @@
     "electron-app",
     "flowdock"
   ],
+  "electronVersion": "0.34.3",
   "scripts": {
     "start": "electron .",
-    "build": "npm run build:macos && npm run build:linux && npm run build:windows",
+    "build": "npm run build:macos && npm run build:linux-deb && npm run build:linux && npm run build:windows",
     "build:macos": "electron-packager . --overwrite --asar --out=dist --prune --platform=darwin --arch=x64 --icon=static/flowdock.icns --app-bundle-id=com.donaldchiang.flowdock-electron-app --app-version=$npm_package_version && zip -ryXq9 ../flowdock-electron-osx-${npm_package_version}.zip dist/Flowdock\\ Electron-darwin-x64/Flowdock\\ Electron.app",
+    "build:linux-deb": "electron-packager . --overwrite --out=dist --prune --platform=linux --arch=x64 --icon=static/flowdock.png --app-bundle-id=com.donaldchiang.flowdock-electron-app --app-version=$npm_package_version && electron-installer-debian --src dist/Flowdock\\ Electron-linux-x64/ --dest dist/ --arch amd64",
     "build:linux": "electron-packager . --overwrite --out=dist --prune --platform=linux --arch=x64 --icon=static/flowdock.png --app-bundle-id=com.donaldchiang.flowdock-electron-app --app-version=$npm_package_version && zip -ryq9 ../flowdock-electron-linux-${npm_package_version}.zip dist/Flowdock\\ Electron-linux-x64/*",
     "build:windows": "electron-packager . --overwrite --asar --out=dist --prune --platform=win32 --arch=ia32 --icon=static/flowdock.ico --app-version=$npm_package_version && zip -ryq9 ../flowdock-electron-windows-${npm_package_version}.zip dist/Flowdock\\ Electron-win32-ia32/*"
   },
-  "devDependencies": {
+  "dependencies": {
     "electron-context-menu": "^0.1.0",
     "electron-debug": "^1.0.0",
-    "electron-dl": "^1.0.0",
+    "electron-dl": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron-installer-debian": "*",
     "electron-packager": "^8.7.1",
     "electron": "^1.7.3",
     "xo": "*"

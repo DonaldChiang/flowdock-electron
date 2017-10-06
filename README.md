@@ -8,7 +8,8 @@ This Electron app use WebContent to load `https://www.flowdock.com/app` and add 
 # Known issues
 
 1. ~~Stay logged in session will missing after application restart~~
-2. Open link with `electron.shell.openExternal(url)` will trigger twice
+2. ~~Open link with `electron.shell.openExternal(url)` will trigger twice~~
+3. ~~App will be quitted when window is closed~~
 
 # Install
 
