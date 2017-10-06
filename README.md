@@ -21,15 +21,15 @@ This Electron app use WebContent to load `https://www.flowdock.com/app` and add 
 
 [Download](https://github.com/DonaldChiang/flowdock-electron/releases/latest), unzip it
 
-Create a file in `~/.local/share/applications` named `flowdock-electron`
+Create a file in `~/.local/share/applications` named `flowdock-electron.desktop`
 
 ```
 [Desktop Entry]
 Name=Flowdock Electron
-Exec=/path/to/Flowdock Electron
+Exec=/path/to/Flowdock\ Electron
 Terminal=false
 Type=Application
-Icon=/path/to/Flowdock Electron/resources/app/static/Icon.png
+Icon=/path/to/Flowdock\ Electron/resources/app/static/flowdock.png
 ```
 
 ## Windows
