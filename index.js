@@ -18,6 +18,7 @@ function createWindow () {
         width: 1280,
         height: 800,
         tabbingIdentifier: 'flowdock',
+        icon: path.join(__dirname, 'static/flowdock.png'),
         webPreferences: {
             nodeIntegration: false,
             preload: path.join(__dirname, 'browser.js'),
