@@ -21,17 +21,20 @@ This Electron app use WebContent to load `https://www.flowdock.com/app` and add 
 
 ## Linux
 
-[Download](https://github.com/DonaldChiang/flowdock-electron/releases/latest), unzip it
-
-Create a file in `~/.local/share/applications` named `flowdock-electron.desktop`
-
+1. Download the zipfile and extract its contents to the `/opt` folder (you'll need sudo)
+2. Changed the name of the folder in `/opt` to "flowdock" to keep things simple
+3. Add a desktop entry under `/usr/share/application` called `flowdock.desktop`
+4. Add the following content to the file:
 ```
 [Desktop Entry]
-Name=Flowdock Electron
-Exec=/path/to/Flowdock\ Electron
+Encoding=UTF-8
+Name=Flowdock
+Exec=/opt/flowdock/Flowdock\ Electron
 Terminal=false
 Type=Application
-Icon=/path/to/Flowdock\ Electron/resources/app/static/flowdock.png
+Icon=/opt/flowdock/resources/app/static/flowdock.png
+Categories=Internet;
+StartupWMClass=flowdock electron
 ```
 
 ## Windows
